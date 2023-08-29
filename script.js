@@ -4,6 +4,7 @@ var output = document.getElementById("boardSizeValue");
 var smallBoard = document.getElementById("smallBoard");
 var mediumBoard = document.getElementById("mediumBoard");
 var largeBoard = document.getElementById("largeBoard");
+var resetBoardBtn = document.getElementById("resetBoard");
 var gridContainer = document.getElementById("grid");
 var r = document.querySelector(":root");
 var gridItems = document.querySelectorAll(".grid-item");
@@ -45,6 +46,9 @@ gridContainer.addEventListener("mousedown", function (event) {
         target.classList.add("hovered");
     }
 });
+resetBoardBtn.addEventListener("click", function () {
+    resetGrid();
+});
 // FUNCTIONS
 function createGrid(rows, cols) {
     r.style.setProperty("--grid-rows", rows.toString());
@@ -58,6 +62,12 @@ function clearGrid() {
     var gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach(function (item) {
         item.remove();
+    });
+}
+function resetGrid() {
+    var gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(function (item) {
+        item.classList.remove("hovered");
     });
 }
 clearGrid();

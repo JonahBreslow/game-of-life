@@ -4,6 +4,7 @@ const output = document.getElementById("boardSizeValue") as HTMLElement;
 const smallBoard = document.getElementById("smallBoard") as HTMLElement;
 const mediumBoard = document.getElementById("mediumBoard") as HTMLElement;
 const largeBoard = document.getElementById("largeBoard") as HTMLElement;
+const resetBoardBtn = document.getElementById("resetBoard") as HTMLElement;
 const gridContainer = document.getElementById("grid") as HTMLElement;
 const r = document.querySelector(":root") as HTMLElement;
 let gridItems = document.querySelectorAll(".grid-item");
@@ -53,6 +54,10 @@ gridContainer.addEventListener("mousedown", (event) => {
     }
 });
 
+resetBoardBtn.addEventListener("click", () => {
+    resetGrid();
+});
+
 // FUNCTIONS
 function createGrid(rows: number, cols: number) {
   r.style.setProperty("--grid-rows", rows.toString());
@@ -67,6 +72,13 @@ function clearGrid() {
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach((item) => {
     item.remove();
+  });
+}
+
+function resetGrid() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((item) => {
+    item.classList.remove("hovered");
   });
 }
 
