@@ -4,8 +4,9 @@ const output = document.getElementById("boardSizeValue") as HTMLElement;
 const gridContainer = document.getElementById("grid") as HTMLElement;
 const r = document.querySelector(":root") as HTMLElement;
 let gridItems = document.querySelectorAll(".grid-item");
+let isMouseDown = false;
 
-// EVENT LISTENERS 
+// EVENT LISTENERS
 slider.addEventListener("input", () => {
   output.innerHTML = `Board Size: ${slider.value} x ${slider.value}`;
   clearGrid();
@@ -13,18 +14,32 @@ slider.addEventListener("input", () => {
   gridItems = document.querySelectorAll(".grid-item");
 });
 
-// need to add event listener to gridContainer and NOT 
-// gridItems because gridItems are dynamically created.
-// This is called event delegation.
+gridContainer.addEventListener("mousedown", (event) => {
+  isMouseDown = true;
+});
+
+gridContainer.addEventListener("mouseup", (event) => {
+  isMouseDown = false;
+});
+
 gridContainer.addEventListener("mouseover", (event) => {
   const target = event.target as HTMLElement;
   if (target.classList.contains("grid-item")) {
-    console.log("hovered");
-    target.classList.add("hovered");
+    if (isMouseDown) {
+      console.log("hovered");
+      target.classList.add("hovered");
+    }
   }
 });
 
-// FUNCTIONS 
+gridContainer.addEventListener("mousedown", (event) => {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains("grid-item")) {
+        target.classList.add("hovered");
+    }
+});
+
+// FUNCTIONS
 function createGrid(rows: number, cols: number) {
   r.style.setProperty("--grid-rows", rows.toString());
   r.style.setProperty("--grid-cols", cols.toString());
