@@ -82,5 +82,11 @@ function resetGrid() {
   });
 }
 
+// TODO: Implement game of life
+function gameOfLife() {
+  return 
+
+}
+
 clearGrid();
 createGrid(16, 16);
