@@ -61,6 +61,14 @@ h1 {
   gap: 50px
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-align-center {
   align-items: center;
 }

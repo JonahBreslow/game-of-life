@@ -1,17 +1,31 @@
 // HTML ELEMENTS
 const slider = document.getElementById("boardSize") as HTMLInputElement;
 const output = document.getElementById("boardSizeValue") as HTMLElement;
+const smallBoard = document.getElementById("smallBoard") as HTMLElement;
+const mediumBoard = document.getElementById("mediumBoard") as HTMLElement;
+const largeBoard = document.getElementById("largeBoard") as HTMLElement;
 const gridContainer = document.getElementById("grid") as HTMLElement;
 const r = document.querySelector(":root") as HTMLElement;
 let gridItems = document.querySelectorAll(".grid-item");
 let isMouseDown = false;
 
 // EVENT LISTENERS
-slider.addEventListener("input", () => {
-  output.innerHTML = `Board Size: ${slider.value} x ${slider.value}`;
-  clearGrid();
-  createGrid(parseInt(slider.value), parseInt(slider.value));
-  gridItems = document.querySelectorAll(".grid-item");
+smallBoard.addEventListener("click", () => {
+    clearGrid();
+    createGrid(16, 16);
+    gridItems = document.querySelectorAll(".grid-item");
+});
+
+mediumBoard.addEventListener("click", () => {
+    clearGrid();
+    createGrid(45, 45);
+    gridItems = document.querySelectorAll(".grid-item");
+});
+
+largeBoard.addEventListener("click", () => {
+    clearGrid();
+    createGrid(69, 69);
+    gridItems = document.querySelectorAll(".grid-item");
 });
 
 gridContainer.addEventListener("mousedown", (event) => {
@@ -55,3 +69,6 @@ function clearGrid() {
     item.remove();
   });
 }
+
+clearGrid();
+createGrid(16, 16);

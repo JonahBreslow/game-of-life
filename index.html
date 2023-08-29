@@ -8,18 +8,7 @@
   </head>
   <body>
     <h1>Etch-a-Sketch</h1>
-    <div class="flex flex-align-center">
-      <div class="slidercontainer">
-        <div class="font-large" id="boardSizeValue">Board Size: 2 x 2</div>
-        <input
-          type="range"
-          min="2"
-          max="69"
-          value="2"
-          class="slider"
-          id="boardSize"
-        />
-      </div>
+    <div class="flex flex-align-center flex-col">
       <div class="w-100 aspect-100 no-overflow">
         <div id="grid">
           <div class="grid-item aspect-100"></div>
@@ -27,6 +16,11 @@
           <div class="grid-item aspect-100"></div>
           <div class="grid-item aspect-100"></div>
         </div>
+      </div>
+      <div class="flex flex-row">
+        <button id="smallBoard">Small Board</button>
+        <button id="mediumBoard">Medium Board</button>
+        <button id="largeBoard">Large Board</button>
       </div>
     </div>
     <script src="script.js"></script>

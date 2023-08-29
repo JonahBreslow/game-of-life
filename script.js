@@ -1,15 +1,27 @@
 // HTML ELEMENTS
 var slider = document.getElementById("boardSize");
 var output = document.getElementById("boardSizeValue");
+var smallBoard = document.getElementById("smallBoard");
+var mediumBoard = document.getElementById("mediumBoard");
+var largeBoard = document.getElementById("largeBoard");
 var gridContainer = document.getElementById("grid");
 var r = document.querySelector(":root");
 var gridItems = document.querySelectorAll(".grid-item");
 var isMouseDown = false;
 // EVENT LISTENERS
-slider.addEventListener("input", function () {
-    output.innerHTML = "Board Size: ".concat(slider.value, " x ").concat(slider.value);
+smallBoard.addEventListener("click", function () {
     clearGrid();
-    createGrid(parseInt(slider.value), parseInt(slider.value));
+    createGrid(16, 16);
+    gridItems = document.querySelectorAll(".grid-item");
+});
+mediumBoard.addEventListener("click", function () {
+    clearGrid();
+    createGrid(45, 45);
+    gridItems = document.querySelectorAll(".grid-item");
+});
+largeBoard.addEventListener("click", function () {
+    clearGrid();
+    createGrid(69, 69);
     gridItems = document.querySelectorAll(".grid-item");
 });
 gridContainer.addEventListener("mousedown", function (event) {
@@ -48,3 +60,5 @@ function clearGrid() {
         item.remove();
     });
 }
+clearGrid();
+createGrid(16, 16);
