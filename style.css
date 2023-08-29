@@ -72,3 +72,7 @@ h1 {
 .aspect-100 {
   aspect-ratio: 1;
 }
+
+.hovered {
+  background-color: rgb(24, 24, 24);
+}

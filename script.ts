@@ -1,15 +1,30 @@
-let slider = document.getElementById("boardSize") as HTMLInputElement;
-let output = document.getElementById("boardSizeValue") as HTMLElement;
+// HTML ELEMENTS
+const slider = document.getElementById("boardSize") as HTMLInputElement;
+const output = document.getElementById("boardSizeValue") as HTMLElement;
+const gridContainer = document.getElementById("grid") as HTMLElement;
+const r = document.querySelector(":root") as HTMLElement;
+let gridItems = document.querySelectorAll(".grid-item");
 
-slider.oninput = function () {
+// EVENT LISTENERS 
+slider.addEventListener("input", () => {
   output.innerHTML = `Board Size: ${slider.value} x ${slider.value}`;
   clearGrid();
   createGrid(parseInt(slider.value), parseInt(slider.value));
-};
+  gridItems = document.querySelectorAll(".grid-item");
+});
 
-const gridContainer = document.getElementById("grid") as HTMLElement;
-const r = document.querySelector(":root") as HTMLElement;
+// need to add event listener to gridContainer and NOT 
+// gridItems because gridItems are dynamically created.
+// This is called event delegation.
+gridContainer.addEventListener("mouseover", (event) => {
+  const target = event.target as HTMLElement;
+  if (target.classList.contains("grid-item")) {
+    console.log("hovered");
+    target.classList.add("hovered");
+  }
+});
 
+// FUNCTIONS 
 function createGrid(rows: number, cols: number) {
   r.style.setProperty("--grid-rows", rows.toString());
   r.style.setProperty("--grid-cols", cols.toString());
