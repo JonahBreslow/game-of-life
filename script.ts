@@ -27,7 +27,7 @@ mediumBoard.addEventListener("click", () => {
 
 largeBoard.addEventListener("click", () => {
   clearGrid();
-  createGrid(69, 69);
+  createGrid(100, 100);
   gridItems = document.querySelectorAll(".grid-item");
 });
 

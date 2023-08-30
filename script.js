@@ -24,7 +24,7 @@ mediumBoard.addEventListener("click", function () {
 });
 largeBoard.addEventListener("click", function () {
     clearGrid();
-    createGrid(69, 69);
+    createGrid(100, 100);
     gridItems = document.querySelectorAll(".grid-item");
 });
 gridContainer.addEventListener("mousedown", function (event) {
