@@ -12,6 +12,10 @@ h1 {
   font-size: 2em
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .slider {
   appearance: none;
   width: 25em; 
@@ -84,4 +88,12 @@ h1 {
 
 .hovered {
   background-color: rgb(24, 24, 24);
+}
+
+.solid-border {
+  border: 1px solid black;
+}
+
+.small-padding {
+  padding: 3px;
 }
