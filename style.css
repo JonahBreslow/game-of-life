@@ -50,7 +50,7 @@ h1 {
 
 
 .grid-item {
-    padding: 2px;
+    padding: 0px;
     border: solid rgb(118, 118, 118);
     border-width: thin;
     text-align: center;
@@ -79,7 +79,7 @@ h1 {
 }
 
 .w-100 {
-  width: 60%;
+  width: 40%;
 }
 
 .aspect-100 {

@@ -21,13 +21,13 @@ smallBoard.addEventListener("click", () => {
 
 mediumBoard.addEventListener("click", () => {
   clearGrid();
-  createGrid(45, 45);
+  createGrid(30, 30);
   gridItems = document.querySelectorAll(".grid-item");
 });
 
 largeBoard.addEventListener("click", () => {
   clearGrid();
-  createGrid(100, 100);
+  createGrid(69, 69);
   gridItems = document.querySelectorAll(".grid-item");
 });
 
