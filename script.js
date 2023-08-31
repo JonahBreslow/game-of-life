@@ -19,12 +19,12 @@ smallBoard.addEventListener("click", function () {
 });
 mediumBoard.addEventListener("click", function () {
     clearGrid();
-    createGrid(30, 30);
+    createGrid(69, 69);
     gridItems = document.querySelectorAll(".grid-item");
 });
 largeBoard.addEventListener("click", function () {
     clearGrid();
-    createGrid(69, 69);
+    createGrid(100, 100);
     gridItems = document.querySelectorAll(".grid-item");
 });
 gridContainer.addEventListener("mousedown", function (event) {

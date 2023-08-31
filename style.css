@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --grid-cols: 2;
     --grid-rows: 2;
+    --color: antiquewhite;
+}
+
+body {
+  font-family: 'Press Start 2P';
+  background-color: rgb(62, 83, 82);
 }
 
 h1 {
+  color: var(--color);
   text-align: center;
   margin-bottom: 2em;
+}
+
+h2 {
+  color: var(--color)
+}
+
+button {
+  font-family: "Press Start 2P";
+  padding: 5px 20px;
+  background-color: var(--color);
+}
+
+button:hover {
+  background-color: chartreuse;
+  transform: scale(1.1)
 }
 
 .font-large {
@@ -43,6 +67,7 @@ h1 {
 
 #grid {
     display: grid;
+    background-color: rgb(190, 190, 190);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     gap: 0px;
@@ -62,7 +87,14 @@ h1 {
 .flex {
   display: flex;
   justify-content: center;
-  gap: 50px
+}
+
+.gap-10 {
+  gap: 10px
+}
+
+.gap-100 {
+  gap: 100px
 }
 
 .flex-row {
@@ -79,7 +111,7 @@ h1 {
 }
 
 .w-100 {
-  width: 40%;
+  width: 600px;
 }
 
 .aspect-100 {
